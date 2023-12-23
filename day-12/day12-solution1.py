@@ -9,7 +9,6 @@ class Repair():
         self.repair_list = [line.strip().split(' ')[0] for line in lines]
         self.arr_list = [[int(arr) for arr in line.strip().split(' ')[1].split(',')] for line in lines]
 
-
     def is_valid(self, solution, arr):
         # gets the input test and template and returns true if its valid
         test_list = re.split(r'\.+', solution)
@@ -33,25 +32,6 @@ class Repair():
         else:
             return self.recursive(repair, arr, i+1)
 
-    # def get_combinations(self, repair, arr):
-    #     n_broken = sum([1 for i in repair if i == '#'])
-    #     n_question = sum([1 for j in repair if j == '?'])
-    #     n_template = sum([int(k) for k in arr])
-        
-    #     comb_input = ''.join(['#'*(n_template - n_broken), '.'*(n_question - (n_template - n_broken))])
-    #     comb_list = set(permutations(comb_input, len(comb_input)))
-
-    #     comb_list = [i for i in set(comb_list)]
-
-    #     combinations = []
- 
-    #     for comb in comb_list:
-    #         n = 0
-    #         comb = [x for x in comb]
-    #         new_string = ''.join([x if x != '?' else comb.pop() for x in repair ])
-    #         combinations.append(new_string)
-    #     return combinations
-    
     def check_true_combinations(self):
         ans = 0
         for repair, arr in zip(self.repair_list, self.arr_list):
