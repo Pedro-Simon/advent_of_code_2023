@@ -58,8 +58,6 @@ class Repair():
             ans += self.recursive(repair, arr, 0, 0, 0)
         return ans
 
-
 if __name__ == '__main__':
     hRepair = Repair('input.txt')
-    # print(dStar.sum_all_dists())
     print(hRepair.check_true_combinations())

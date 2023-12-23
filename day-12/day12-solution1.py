@@ -39,8 +39,6 @@ class Repair():
         
         return ans
 
-
 if __name__ == '__main__':
     hRepair = Repair('input.txt')
-    # print(dStar.sum_all_dists())
     print(hRepair.check_true_combinations())
